@@ -1,5 +1,7 @@
 # php-fpm-common
 
+[![](https://imagelayers.io/badge/he8us/php-fpm-common:latest.svg)](https://imagelayers.io/?images=he8us/php-fpm-common:latest 'Get your own badge on imagelayers.io')
+
 Base php configuration. Meant to be extended like in my images [php-fpm-prod](https://hub.docker.com/r/he8us/php-fpm-prod/) and [php-fpm-dev](https://hub.docker.com/r/he8us/php-fpm-dev/)
 
 ## How to use this image
