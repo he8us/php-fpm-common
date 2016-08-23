@@ -1,6 +1,7 @@
 # php-fpm-common
 
-[![](https://imagelayers.io/badge/he8us/php-fpm-common:latest.svg)](https://imagelayers.io/?images=he8us/php-fpm-common:latest 'Get your own badge on imagelayers.io')
+[![](https://images.microbadger.com/badges/version/he8us/php-fpm-common.svg)](http://microbadger.com/images/he8us/php-fpm-common "Get your own version badge on microbadger.com")
+[![](https://images.microbadger.com/badges/image/he8us/php-fpm-common.svg)](http://microbadger.com/images/he8us/php-fpm-common "Get your own image badge on microbadger.com")
 
 Base php configuration. Meant to be extended like in my images [php-fpm-prod](https://hub.docker.com/r/he8us/php-fpm-prod/) and [php-fpm-dev](https://hub.docker.com/r/he8us/php-fpm-dev/)
 
