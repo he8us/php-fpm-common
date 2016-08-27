@@ -16,12 +16,17 @@ RUN \
     apt-get install -yqq \
         icu-devtools \
         libicu-dev \
+        libfreetype6-dev \
+        libjpeg62-turbo-dev \
+        libpng12-dev \
         libmcrypt-dev \
         mysql-client
 
-RUN \
-    docker-php-ext-install \
+    && docker-php-ext-configure gd --with-freetype-dir=/usr/include/ --with-jpeg-dir=/usr/include/ \
+    && docker-php-ext-install -j$(nproc) gd \
+    && docker-php-ext-install \
         pdo_mysql \
+        gd \
         intl \
         mbstring \
         mcrypt \
