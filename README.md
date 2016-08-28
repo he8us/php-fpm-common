@@ -1,7 +1,6 @@
 # php-fpm-common
 
-[![](https://images.microbadger.com/badges/version/he8us/php-fpm-common.svg)](http://microbadger.com/images/he8us/php-fpm-common "Get your own version badge on microbadger.com")
-[![](https://images.microbadger.com/badges/image/he8us/php-fpm-common.svg)](http://microbadger.com/images/he8us/php-fpm-common "Get your own image badge on microbadger.com")
+[![](https://images.microbadger.com/badges/version/he8us/php-fpm-common.svg)](http://microbadger.com/images/he8us/php-fpm-common "Get your own version badge on microbadger.com") [![](https://images.microbadger.com/badges/image/he8us/php-fpm-common.svg)](http://microbadger.com/images/he8us/php-fpm-common "Get your own image badge on microbadger.com")
 
 Base php configuration. Meant to be extended like in my images [php-fpm-prod](https://hub.docker.com/r/he8us/php-fpm-prod/) and [php-fpm-dev](https://hub.docker.com/r/he8us/php-fpm-dev/)
 
@@ -14,7 +13,7 @@ It runs PHP 5.6-fpm with pdo_mysql, intl, mbstring, mcrypt and bcmath. The base 
     docker run --name php -d -p 9000:9000 he8us/php-fpm-common
 
 It can be configured using environment variables:
- 
+
  * `TIMEZONE` Default: `Europe\Brussels`
 
 And there's my docker-compose sample:
@@ -26,6 +25,6 @@ And there's my docker-compose sample:
         environment:
             APPLICATION_ENV: dev
             TIMEZONE: "Europe/Brussels"
-    
+
         volumes_from:
             - application
