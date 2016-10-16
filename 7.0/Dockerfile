@@ -25,13 +25,18 @@ RUN \
         libmcrypt-dev \
         libmagickwand-dev \
         mysql-client \
+        libjpeg62-turbo-dev \
+        libpng12-dev \
+        libfreetype6-dev \
+    && docker-php-ext-configure gd --with-freetype-dir=/usr/include/ --with-jpeg-dir=/usr/include/ \
     && docker-php-ext-install \
         pdo_mysql \
         exif \
         intl \
         mbstring \
         mcrypt \
-        bcmath
+        bcmath \
+        gd
 
 
 RUN pecl install imagick \
