@@ -25,6 +25,8 @@ RUN \
         libmcrypt-dev \
         libmagickwand-dev \
         mysql-client \
+        zlib1g-dev \
+        unzip \
         libjpeg62-turbo-dev \
         libpng12-dev \
         libfreetype6-dev \
@@ -36,7 +38,8 @@ RUN \
         mbstring \
         mcrypt \
         bcmath \
-        gd
+        gd \
+        zip
 
 
 RUN pecl install imagick \
