@@ -45,8 +45,8 @@ RUN \
 RUN pecl install imagick \
     && docker-php-ext-enable imagick
 
-RUN pecl install apcu &&
-    docker-php-ext-enable apcu
+RUN pecl install apcu \
+    && docker-php-ext-enable apcu
 
 
 ENTRYPOINT ["/app/entrypoint.sh"]
