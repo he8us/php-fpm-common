@@ -25,14 +25,19 @@ RUN \
         libmcrypt-dev \
         libpng-dev \
         libtool \
+        pcre-dev \
         wget \
         zip
 
 RUN \
-    export CFLAGS="$PHP_CFLAGS" CPPFLAGS="$PHP_CPPFLAGS" LDFLAGS="$PHP_LDFLAGS" \
-    && docker-php-ext-configure gd --with-freetype-dir=/usr/include/ --with-jpeg-dir=/usr/include/ \
+    apk --no-cache add \
+        --virtual .phpize-deps \
+        build-base \
+        autoconf \
+    && export CFLAGS="$PHP_CFLAGS" CPPFLAGS="$PHP_CPPFLAGS" LDFLAGS="$PHP_LDFLAGS" \
     && pecl install imagick-${IMAGICK_VERSION} \
     && docker-php-ext-enable imagick \
+    && docker-php-ext-configure gd --with-freetype-dir=/usr/include/ --with-jpeg-dir=/usr/include/ \
     && docker-php-ext-install \
         bcmath \
         gd \
@@ -41,7 +46,8 @@ RUN \
         mbstring \
         mcrypt \
         pdo_mysql \
-        zip
+        zip \
+    && apk del .phpize-deps
 
 
 ENTRYPOINT ["/app/entrypoint.sh"]
