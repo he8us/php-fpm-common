@@ -17,9 +17,7 @@ RUN \
     && chmod +x /usr/local/bin/confd
 
 RUN \
-    apk update --no-cache \
-    && apk add --no-cache \
-        --virtual .phpize-deps $PHPIZE_DEPS \
+    apk --no-cache add  \
         freetype-dev \
         icu-dev \
         imagemagick-dev \
@@ -43,8 +41,7 @@ RUN \
         mbstring \
         mcrypt \
         pdo_mysql \
-        zip \
-    && apk del .phpize-deps
+        zip
 
 
 ENTRYPOINT ["/app/entrypoint.sh"]
